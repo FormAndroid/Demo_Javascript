@@ -80,3 +80,28 @@ console.log(count++);   //  1           2
 console.log(++count);   //  3           3
 console.log(count--);   //  3           2
 console.log(--count);   //  1           1
+
+
+// - Difference entre la post-incrementation et la pre-incrementation
+
+//  Exemple de post-...
+let demoPost = 10;
+const res1 = demoPost++ * 2;
+// Il lit la valeur initial et la garde en memoire pour le calcul.
+//  Ensuite, il increment la valeur de la variable
+// Resultat de l'exemple : demoPost -> 11  && res1 -> 20
+
+//  Exemple de pre-...
+let demoPre = 10;
+const res2 = ++demoPre * 2;
+// Il incremente la valeur de la variable. Ensuite, il lit le contenu de
+//  la variable pour résoudre le calcul.
+// Resultat de l'exemple : demoPre -> 11  && res2 -> 22
+
+
+// - Best pratice -> Eviter de le mettre dans des lignes complexe.
+//                   L'utiliser seul avant ou aprés une ligne.
+let nbA = 10;
+let nbB = 2;
+const res3 = nb++ * (--nb2 * 2);    // <- Pas très lisible ;)
+// Etape lecture ->  10 * (1 * 2)
