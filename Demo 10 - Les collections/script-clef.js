@@ -40,23 +40,70 @@ console.log('L\'ensemble sous forme de iterable', iterableEnsemble);
 // - Recréer un tableau avec les données du Set
 const tabEnsemble = Array.from(monEnsemble);
 console.log('L\'ensemble sous forme de tableau', tabEnsemble);
+console.log('');
 
 
 
 
+/* ### Les collections -> Map (Es2015) ### */
+// Ensemble d'element sous la forme de clef et valeur
+
+// - Déclaration
+const tabClefValeur = [['Clef1', 'Zaza'], ['Clef2', 'Donald'] ];
+const dicoAvecValeur = new Map(tabClefValeur);
+console.log(dicoAvecValeur);
+
+const dico = new Map()
+console.log('Map initial', dico);
+
+// - Ajout
+dico.set('d1', 'Riri Duck');
+dico.set('b1', 'Hello World');
+dico.set('d2', 'Donald Duck');
+dico.set('z1', 'Zaza Vanderquack');
+console.log('Après l\'ajout', dico);
+
+dico.set('b1', 'Balthazar Picsou');
+console.log('Après l\'ajout d\'un double', dico);
+
+// - Suppression
+dico.delete('d2');
+console.log('Après la suppression', dico);
+
+// - Tester si la clef est présente
+const t3 = dico.has('z1');
+console.log(`Contient la clef 'z1' : ${t3}`);
+
+// - Récuperer
+const zaza = dico.get('z1');
+console.log(`L'element avec la clef 'z1' est ${zaza}`);
+console.log('');
 
 
+// Bonus - Dico avec des objets (cf : Demande de patrick)
+const dicoStudent = new Map();
 
+dicoStudent.set('e1', {
+    firstname: 'Zaza',
+    lastname: 'Vanderquack',
+    result: 20
+});
 
+dicoStudent.set('e2', {
+    firstname: 'Riri',
+    lastname: 'Duck',
+    result: 11
+});
 
+dicoStudent.set('e3', {
+    firstname: 'Loulou',
+    lastname: 'Duck',
+    result: 1
+});
 
+console.log(dicoStudent);
 
-
-
-
-
-
-
-
-
-/* ### Les collections -> Map ### */
+const eleve = dicoStudent.get('e1');
+console.log(eleve);
+console.log(`L'eleve ${eleve.firstname} ${eleve.lastname} à`
+            + `un resultat de ${eleve.result} / 20 !`);
